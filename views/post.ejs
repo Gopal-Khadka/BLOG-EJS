@@ -1,0 +1,17 @@
+<%- include('partials/header'); -%>
+
+<h1>All Posts</h1>
+<div class="posts">
+  <% for (let key in posts) { %>
+  <div>
+    <h3><%= key %></h3>
+    <p>
+      <%= _.truncate(posts[key],{length:150})%>
+      <a href="/posts/<%=_.kebabCase(_.lowerCase(key))%>">Read More</a>
+    </p>
+  </div>
+
+  <% } %>
+</div>
+
+<%- include('partials/footer'); -%>
